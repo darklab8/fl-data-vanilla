@@ -1,0 +1,40 @@
+name: Publish
+
+on:
+  push: {}
+  workflow_dispatch: {}
+
+jobs:
+  github-pages:
+    name: Github Pages
+    runs-on: ubuntu-22.04
+    permissions:
+        contents: read
+        pages: write
+        id-token: write
+    environment:
+        name: github-pages
+        url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+        - uses: darklab8/fl-configs/.github/actions/checkout-freelancer@master
+          with:
+            freelancer-mod: "vanilla"
+            freelancer-folder: ${{ github.workspace }}
+            ssh-key-base64-vanilla: ${{ secrets.ID_RSA_FILES_FREELANCER_VANILLA }}
+
+        - uses: darklab8/fl-darkstat/.github/actions/build@master
+          with:
+            site-root: "/fl-data-vanilla/"
+            freelancer-folder: ${{ github.workspace }}
+            heading: <a href="https://github.com/darklab8/fl-darkstat">fl-darkstat</a> from <a href="https://darklab8.github.io/blog/pet_projects.html#DiscoveryFreelancercommunity">DarkTools</a> for <a href="https://github.com/darklab8/fl-data-vanilla">Freelancer Vanilla</a>
+
+        - uses: actions/upload-pages-artifact@v1
+          with:
+            name: github-pages
+            path: ./build
+        
+        # Turn on ability to deploy to pages in repository settings, Pages tab
+        # choose "Github Actions" deployment method to Pages
+        - name: Deploy to pages
+          uses: actions/deploy-pages@v1
+          id: deployment
