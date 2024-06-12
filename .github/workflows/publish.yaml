@@ -26,7 +26,7 @@ jobs:
           with:
             site-root: "/fl-data-vanilla/"
             freelancer-folder: ${{ github.workspace }}
-            heading: <a href="https://github.com/darklab8/fl-darkstat">fl-darkstat</a> from <a href="https://darklab8.github.io/blog/pet_projects.html#DiscoveryFreelancercommunity">DarkTools</a> for <a href="https://github.com/darklab8/fl-data-vanilla">Freelancer Vanilla</a>
+            heading: <a href="https://github.com/darklab8/fl-darkstat">Darkstat</a> from <a href="https://darklab8.github.io/blog/pet_projects.html#DiscoveryFreelancercommunity">DarkTools</a> for <a href="https://github.com/darklab8/fl-data-vanilla">Freelancer Vanilla</a>
 
         - uses: actions/upload-pages-artifact@v1
           with:
