@@ -18,7 +18,7 @@ jobs:
         name: github-pages
         url: ${{ steps.deployment.outputs.page_url }}
     steps:
-        - uses: darklab8/fl-configs/.github/actions/checkout-freelancer@master
+        - uses: darklab8/infra/.github/actions/checkout-freelancer@master
           with:
             freelancer-mod: "vanilla"
             freelancer-folder: ${{ github.workspace }}
