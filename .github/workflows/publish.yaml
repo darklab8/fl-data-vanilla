@@ -30,7 +30,7 @@ jobs:
             freelancer-folder: ${{ github.workspace }}
             heading: <a href="https://github.com/darklab8/fl-darkstat">Darkstat</a> from <a href="https://darklab8.github.io/blog/pet_projects.html#Freelancercommunity">DarkTools</a> for <a href="https://github.com/darklab8/fl-data-vanilla">Freelancer Vanilla</a>
 
-        - uses: actions/upload-pages-artifact@v1
+        - uses: actions/upload-pages-artifact@v3
           with:
             name: github-pages
             path: ./build
@@ -38,5 +38,5 @@ jobs:
         # Turn on ability to deploy to pages in repository settings, Pages tab
         # choose "Github Actions" deployment method to Pages
         - name: Deploy to pages
-          uses: actions/deploy-pages@v1
+          uses: actions/deploy-pages@v4
           id: deployment
