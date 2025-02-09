@@ -29,6 +29,7 @@ jobs:
             site-root: "/fl-data-vanilla/"
             freelancer-folder: ${{ github.workspace }}
             heading: <a href="https://github.com/darklab8/fl-darkstat">Darkstat</a> from <a href="https://darklab8.github.io/blog/pet_projects.html#Freelancercommunity">DarkTools</a> for <a href="https://github.com/darklab8/fl-data-vanilla">Freelancer Vanilla</a>
+            apigateway-host: "https://apigateway-staging.dd84ai.com/"
 
         - uses: actions/upload-pages-artifact@v3
           with:
