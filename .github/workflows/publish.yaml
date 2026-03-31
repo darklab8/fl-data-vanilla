@@ -36,7 +36,8 @@ jobs:
             freelancer-folder: ${{ github.workspace }}
             heading: <a href="https://github.com/darklab8/fl-darkstat">Darkstat</a> from <a href="https://darklab8.github.io/blog/pet_projects.html#Freelancercommunity">DarkTools</a> for <a href="https://github.com/darklab8/fl-data-vanilla">Freelancer Vanilla</a>
             relay-host: https://darkrelay-staging.dd84ai.com
-            command: --stat-deals-on --map-on build
+            command: --stat-deals-on build
+            map-on: "true"
         - uses: actions/upload-pages-artifact@v3
           with:
             name: github-pages
