@@ -38,6 +38,7 @@ jobs:
             relay-host: https://darkrelay-staging.dd84ai.com
             command: --stat-deals-on build
             map-on: "true"
+            map-index-url: map.html
         - uses: actions/upload-pages-artifact@v3
           with:
             name: github-pages
