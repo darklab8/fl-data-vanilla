@@ -27,7 +27,6 @@ jobs:
           with:
             freelancer-mod: "vanilla"
             freelancer-folder: ${{ github.workspace }}
-            ssh-key-base64-vanilla: ${{ secrets.ID_RSA_FILES_FREELANCER_VANILLA }}
 
         - uses: darklab8/fl-darkstat/.github/actions/build@master
           with:
